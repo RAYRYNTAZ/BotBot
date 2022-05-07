@@ -2,7 +2,7 @@
 
 class otpkita {
 
-    private $url = 'https://api.otpkita.com/api_handler.php?api_key=$api_key&action=set_status&order_id=$order_id&status=$returnStatus';
+    private $url = 'https://smshub.org/stubs/handler_api.php';
 
     private $api_key;
 
