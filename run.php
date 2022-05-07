@@ -6,7 +6,7 @@ require_once __DIR__.'/userAgent.php';
 require __DIR__ . '/smshub.php';
 
 //APIKEY SMSHUB
-$key = '9652e1f4761a4b97933efe8836a4793e';
+$key = '129783U293186b2311b8fe2e0c8641dd5fb0edb';
 
 if($key == null) {
     die('Masukan apikey di line 9 goblog!!');
@@ -71,7 +71,7 @@ for ($ia=0; $ia < $jumlah; $ia++) {
                 $getOTP = 0;
                 do {
                     $curl = new Curl();
-                    $curl->post('https://api.otpkita.com/api_handler.php', 'api_key='$key '&action=get_order&operator_id=$operator_id&service_id=$service_id');
+                    $curl->post('https://smshub.org/stubs/handler_api.php', 'action=getCurrentActivations&api_key='.$key.'&order=id&orderBy=asc&start=0&length=10');
                     $otpBos = json_decode($curl->response)->array[0]->code;
                     $getOTP++;
                         if ($getOTP == 10) {
